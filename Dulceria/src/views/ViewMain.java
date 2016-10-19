@@ -27,7 +27,28 @@ public class ViewMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jmi_clientes = new javax.swing.JMenuItem();
+        jmi_proveedores = new javax.swing.JMenuItem();
+        jmi_productos = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenu1.setText("Menu");
+
+        jmi_clientes.setText("Clientes");
+        jMenu1.add(jmi_clientes);
+
+        jmi_proveedores.setText("Proveedores");
+        jMenu1.add(jmi_proveedores);
+
+        jmi_productos.setText("Productos");
+        jMenu1.add(jmi_productos);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -37,7 +58,7 @@ public class ViewMain extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 279, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +100,10 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jmi_clientes;
+    private javax.swing.JMenuItem jmi_productos;
+    private javax.swing.JMenuItem jmi_proveedores;
     // End of variables declaration//GEN-END:variables
 }
