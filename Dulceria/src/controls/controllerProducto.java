@@ -7,7 +7,7 @@ package controls;
 
 /**
  *
- * @author Andro
+ * @author Andromeda
  */
 public class controllerProducto {
     
