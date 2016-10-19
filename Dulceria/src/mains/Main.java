@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controls;
+package mains;
 
 /**
  *
  * @author Andro
  */
-public class ControllerProducto {
+public class Main {
     
 }
