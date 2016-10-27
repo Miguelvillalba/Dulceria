@@ -82,7 +82,7 @@ public class controllerProducto implements ActionListener {
         viewProducto.jtf_descripcion.setText(modelProducto.getDescripcion());
     }
 
-    private void jbtn_agregarMouseClicked(java.awt.event.MouseEvent evt) {
+    private void guardarRegistro() {
         String id_producto;
         String nombre;
         String precio;
@@ -99,6 +99,7 @@ public class controllerProducto implements ActionListener {
             String sql = "insert into producto(id_producto,nombre,precio,stock,descripcion) values ('" + id_producto + "','" + nombre + "','" + precio + "','" + stock + "','" + descripcion + "');";
             System.out.println(sql);
             st.executeUpdate(sql);
+            this.modelProducto.setValues();
 
         } catch (Exception err) {
             JOptionPane.showMessageDialog(null, "Favor de llenar todos los campos" + err.getLocalizedMessage());
