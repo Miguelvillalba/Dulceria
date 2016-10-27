@@ -100,10 +100,10 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jmi_clientes;
-    private javax.swing.JMenuItem jmi_productos;
-    private javax.swing.JMenuItem jmi_proveedores;
+    public javax.swing.JMenu jMenu1;
+    public javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuItem jmi_clientes;
+    public javax.swing.JMenuItem jmi_productos;
+    public javax.swing.JMenuItem jmi_proveedores;
     // End of variables declaration//GEN-END:variables
 }

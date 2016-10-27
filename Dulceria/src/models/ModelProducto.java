@@ -5,16 +5,57 @@
  */
 package models;
 
+import sax.DBConnection;
+
 /**
  *
  * @author Andro
  */
 public class ModelProducto {
+
     private int id_producto;
     private String nombre;
-    private double precio;
+    private String precio;
+    private String stock;  
     private String descripcion;
-    private int existencias;
+   
+   
+
+    private DBConnection conection = new DBConnection(3306, "localhost", "dulceria", "root", "");
+    
+     public void moveNext(){
+        conection.moveNext();
+        setValues();
+    }
+    
+    public void movePrevious(){
+        conection.movePrevious();
+        setValues();
+    }
+    
+    public void moveFirst(){
+        conection.moveFirst();
+        setValues();
+    }
+    
+    public void moveLast(){
+        conection.moveLast();
+        setValues();
+    }
+    
+    public void initValues(){
+        conection.executeQuery("SELECT id_producto, nombre, precio, stock, descripcion FROM producto;");
+        conection.moveNext();
+        setValues();
+    }
+    public void setValues(){
+        this.setId_producto(conection.getInteger("idContacto"));
+        this.setNombre(conection.getString("nombre"));
+        this.setPrecio(conection.getString("precio"));
+        this.setStock(conection.getString("stock"));
+        this.setDescripcion(conection.getString("descripcion"));
+                
+    }
 
     /**
      * @return the id_producto
@@ -44,19 +85,8 @@ public class ModelProducto {
         this.nombre = nombre;
     }
 
-    /**
-     * @return the precio
-     */
-    public double getPrecio() {
-        return precio;
-    }
-
-    /**
-     * @param precio the precio to set
-     */
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
+    
+   
 
     /**
      * @return the descripcion
@@ -72,18 +102,36 @@ public class ModelProducto {
         this.descripcion = descripcion;
     }
 
-    /**
-     * @return the existencias
-     */
-    public int getExistencias() {
-        return existencias;
+    public void movePreviousActionPerformed() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
-     * @param existencias the existencias to set
+     * @return the precio
      */
-    public void setExistencias(int existencias) {
-        this.existencias = existencias;
+    public String getPrecio() {
+        return precio;
     }
-    
+
+    /**
+     * @param precio the precio to set
+     */
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+
+    /**
+     * @return the stock
+     */
+    public String getStock() {
+        return stock;
+    }
+
+    /**
+     * @param stock the stock to set
+     */
+    public void setStock(String stock) {
+        this.stock = stock;
+    }
+
 }
