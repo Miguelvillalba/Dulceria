@@ -1,5 +1,5 @@
 package models;
-import sax.DB.Connection;
+import sax.DBConnection;
 /**
  *
  * @author Karla
