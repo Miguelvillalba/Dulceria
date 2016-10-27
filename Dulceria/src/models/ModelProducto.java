@@ -13,7 +13,7 @@ import sax.DBConnection;
  */
 public class ModelProducto {
 
-    private int id_producto;
+    private String id_producto;
     private String nombre;
     private String precio;
     private String stock;  
@@ -49,7 +49,7 @@ public class ModelProducto {
         setValues();
     }
     public void setValues(){
-        this.setId_producto(conection.getInteger("idContacto"));
+        this.setId_producto(conection.getString("id_producto"));
         this.setNombre(conection.getString("nombre"));
         this.setPrecio(conection.getString("precio"));
         this.setStock(conection.getString("stock"));
@@ -60,14 +60,14 @@ public class ModelProducto {
     /**
      * @return the id_producto
      */
-    public int getId_producto() {
+    public String getId_producto() {
         return id_producto;
     }
 
     /**
      * @param id_producto the id_producto to set
      */
-    public void setId_producto(int id_producto) {
+    public void setId_producto(String id_producto) {
         this.id_producto = id_producto;
     }
 
