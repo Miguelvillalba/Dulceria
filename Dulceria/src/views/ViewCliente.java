@@ -48,7 +48,7 @@ public class ViewCliente extends javax.swing.JPanel {
         jtfCiudad = new javax.swing.JTextField();
         jtfTelefono = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(0, 204, 204));
 
@@ -119,7 +119,7 @@ public class ViewCliente extends javax.swing.JPanel {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -130,7 +130,7 @@ public class ViewCliente extends javax.swing.JPanel {
                 "id", "Nombre", "Direccion", "Telefono", "Ciudad"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -270,7 +270,7 @@ public class ViewCliente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
+    public javax.swing.JTable jTable;
     public javax.swing.JButton jbAnadir;
     public javax.swing.JButton jbanterior;
     public javax.swing.JButton jbbuscar;
