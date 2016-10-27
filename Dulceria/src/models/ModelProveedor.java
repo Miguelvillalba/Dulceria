@@ -1,5 +1,5 @@
 package models;
-
+import sax.DB.Connection;
 /**
  *
  * @author Karla
@@ -18,6 +18,46 @@ public class ModelProveedor {
     private String email;
 
 
+    private DBConnection conection = new DBConnection(3306, "localhost", "dulceria", "root", "");
+    
+     public void moveSiguiente(){
+        conection.moveSiguiente();
+        setValues();
+    }
+    
+    public void moveAnterior(){
+        conection.moveAnterior();
+        setValues();
+    }
+    
+    public void movePrimero(){
+        conection.movePrimero();
+        setValues();
+    }
+    
+    public void moveUltimo(){
+        conection.moveUltimo();
+        setValues();
+    }
+    
+    public void initValues(){
+        conection.executeQuery("SELECT id_proveedor, nombre, rfc, calle, no, colonia, ciudad, estado, nombrecontacto, telefono, email FROM proveedor;");
+        conection.moveNext();
+        setValues();
+    }
+    public void setValues(){
+        this.setId_proveedor(conection.getString("id_proveedor"));
+        this.setNombre(conection.getString("nombre"));
+        this.setRFC(conection.getString("rfc"));
+        this.setCalle(conection.getString("calle"));
+        this.setNo(conection.getString("no"));
+        this.setColonia(conection.getString("colonia"));
+        this.setEstado(conection.getString("estado"));
+        this.setNombre_contacto(conection.getString("Nombre_contacto"));
+        this.setTelefono(conection.getString("Telefono"));
+        this.setEmail(conection.getString("Email"));       
+    }
+    
     public int getId_proveedor() {
         return id_proveedor;
     }
