@@ -19,7 +19,7 @@ public class ControllerCliente implements ActionListener{
     private final ViewCliente viewCliente;
     private DBConnection conection = new DBConnection(3306,"localhost", "dulceria", "root", "1234");
 
-    public ControllerClientes(ViewCliente viewCliente, ModelCliente modelCliente){
+    public ControllerCliente(ViewCliente viewCliente, ModelCliente modelCliente){
         this.modelCliente=modelCliente;
         this.viewCliente=viewCliente;
         
@@ -61,9 +61,9 @@ public class ControllerCliente implements ActionListener{
         else if(ae.getSource()==viewCliente.jbguardar){
          guadarRegistro();   
         }
-        else if(ae.getSource()==viewCliente.jbeliminar){
-            jbtnEliminarActionPerformed();
-        }
+        /*else if(ae.getSource()==viewCliente.jbeliminar){
+            jbEliminar();
+        }*/
         else if(ae.getSource()==viewCliente.jbeditar)
           editarValues();   
         }
@@ -114,10 +114,10 @@ public class ControllerCliente implements ActionListener{
        
 
     }
-     private void showData() {
+     /*private void showData() {
         viewCliente.jTable.setModel(modelCliente.tableModel);
         modelCliente.Tabla();
-    }
+    }*/
      public void editarValues(){
          Integer id_cliente=Integer.parseInt(viewCliente.jtfid.getText());
          String nombre=this.viewCliente.jtfNombre.getText();
@@ -142,6 +142,12 @@ public class ControllerCliente implements ActionListener{
         
     }
 
+    private void showData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+
    
 }
+
 

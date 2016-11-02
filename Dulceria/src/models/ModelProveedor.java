@@ -20,23 +20,23 @@ public class ModelProveedor {
 
     private DBConnection conection = new DBConnection(3306, "localhost", "dulceria", "root", "");
     
-     public void moveSiguiente(){
-        conection.moveSiguiente();
+     public void moveNext(){
+        conection.moveNext();
         setValues();
     }
     
-    public void moveAnterior(){
-        conection.moveAnterior();
+    public void movePrevious(){
+        conection.movePrevious();
         setValues();
     }
     
-    public void movePrimero(){
-        conection.movePrimero();
+    public void moveFirst(){
+        conection.moveFirst();
         setValues();
     }
     
-    public void moveUltimo(){
-        conection.moveUltimo();
+    public void moveLast(){
+        conection.moveLast();
         setValues();
     }
     
@@ -46,15 +46,15 @@ public class ModelProveedor {
         setValues();
     }
     public void setValues(){
-        this.setId_proveedor(conection.getString("id_proveedor"));
+        this.setId_proveedor(conection.getInteger("id_proveedor"));
         this.setNombre(conection.getString("nombre"));
         this.setRFC(conection.getString("rfc"));
         this.setCalle(conection.getString("calle"));
-        this.setNo(conection.getString("no"));
+        this.setNo(conection.getInteger("no"));
         this.setColonia(conection.getString("colonia"));
         this.setEstado(conection.getString("estado"));
         this.setNombre_contacto(conection.getString("Nombre_contacto"));
-        this.setTelefono(conection.getString("Telefono"));
+        this.setTelefono(conection.getInteger("Telefono"));
         this.setEmail(conection.getString("Email"));       
     }
     
@@ -145,5 +145,14 @@ public class ModelProveedor {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    private void setNombre_contacto(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setRFC(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
+

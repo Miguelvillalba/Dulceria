@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package controls;
-import models.ModelProveedor;
+//import models.ModelProveedor;
 import views.ViewProveedor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author Karla
  */
-public class ControllerProveedor implements ActionListener {
+/*public class ControllerProveedor implements ActionListener {
     
     private ModelProveedor modelproveedor;
     private ViewProveedor viewproveedor;
@@ -121,4 +121,4 @@ private void showValues(){
     }
  }
 }
-	  
+*/	  
