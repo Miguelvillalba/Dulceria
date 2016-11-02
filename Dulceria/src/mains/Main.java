@@ -15,6 +15,14 @@ import controls.*;
 
 public class Main {
     public static void main(String[] args) {
+        ViewCliente viewCliente = new ViewCliente();
+        ModelCliente modelCliente = new ModelCliente();
+        ControllerCliente controllerCliente = new ControllerCliente(viewCliente, modelCliente);
+        
+        ViewProveedor viewProveedor = new ViewProveedor();
+        ModelProveedor modelProveedor = new ModelProveedor();
+        ControllerProveedor controllerProveedor = new ControllerProveedor(viewProveedor, modelProveedor);
+        
         ViewProducto viewProducto = new ViewProducto();
         ModelProducto modelProducto = new ModelProducto();
         controllerProducto controllerProducto = new controllerProducto(viewProducto, modelProducto);
