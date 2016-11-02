@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="0" green="99" red="ff" type="rgb"/>
+    </Property>
+    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+      <Color id="Cursor Por defecto"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -20,71 +28,67 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jL_proveedores" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
+                      <Component id="jL_proveedores" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="163" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="375" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel1" min="-2" pref="435" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="jL_nombre" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_rfc" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_calle" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_no" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_colonia" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_estado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_nombre_contacto" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_telefono" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_email" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jL_id" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jL_ciudad" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jtf_rfc" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_nombre" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_id" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_estado" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_nombre_contacto" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_telefono" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_email" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_colonia" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_no" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_ciudad" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="jtf_calle" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jB_agregar" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jB_editar" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jB_buscar" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jB_quitar" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                      <Component id="jB_primero" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jB_anterior" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jB_siguiente" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jB_ultimo" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jL_rfc" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_calle" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_nombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_colonia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_estado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_nombre_contacto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_telefono" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_email" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_id" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_no" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_ciudad" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jtf_rfc" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_id" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_estado" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_nombre_contacto" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_telefono" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_email" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_colonia" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_no" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_ciudad" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_calle" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="jtf_nombre" min="-2" pref="100" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jB_agregar" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jB_editar" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jB_quitar" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jB_buscar" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="jB_guardar" alignment="1" min="-2" pref="63" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jB_primero" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jB_anterior" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jB_siguiente" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jB_ultimo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
+          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -94,98 +98,95 @@
               <Component id="jL_proveedores" min="-2" pref="41" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jL_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_id" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                      <Component id="jB_agregar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="jB_quitar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jB_editar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jB_buscar" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="195" pref="195" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jL_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtf_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jtf_rfc" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_rfc" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jtf_calle" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_calle" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jtf_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_no" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jtf_colonia" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jL_colonia" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jL_id" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jtf_id" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jL_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jtf_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jL_rfc" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jtf_rfc" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="jtf_calle" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                                      <Component id="jL_calle" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jtf_no" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jL_no" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jL_ciudad" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_ciudad" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jL_estado" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jtf_estado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jtf_ciudad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_ciudad" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jL_nombre_contacto" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jtf_estado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_estado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jtf_nombre_contacto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jL_nombre_contacto" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Component id="jtf_nombre_contacto" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jB_agregar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jB_quitar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jB_editar" min="-2" pref="38" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jB_buscar" min="-2" pref="41" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jB_guardar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jtf_telefono" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jL_telefono" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jtf_no" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jL_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jL_email" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtf_email" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jB_primero" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_anterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_siguiente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jB_ultimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" pref="399" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jB_primero" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jB_anterior" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jB_siguiente" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jB_ultimo" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="95" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="112" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -206,7 +207,7 @@
     <Component class="javax.swing.JLabel" name="jL_proveedores">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="0" green="99" red="ff" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="24" style="1"/>
@@ -229,6 +230,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="id_proveedor"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -240,6 +242,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nombre"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -251,6 +254,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="RFC"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -262,6 +266,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Calle"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -273,6 +278,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="No"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -284,6 +290,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Colonia"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -295,6 +302,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ciudad"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -306,6 +314,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Estado"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -317,6 +326,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nombre contacto"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -328,6 +338,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Telefono"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -339,6 +350,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Email"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -493,6 +505,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="|&lt;"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_primeroActionPerformed"/>
@@ -507,6 +520,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -518,6 +532,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&gt;"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -529,6 +544,7 @@
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="|&gt;"/>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -539,7 +555,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="+"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/1477464120_1_1.png"/>
+        </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_agregarActionPerformed"/>
@@ -553,7 +572,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="-"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/1477464108_1_2.png"/>
+        </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_quitarActionPerformed"/>
@@ -567,7 +589,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Editar"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/editar.png"/>
+        </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -578,7 +603,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Buscar"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/1477463679_Search.png"/>
+        </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -596,19 +624,46 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Gothic" size="12" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="99" red="ff" type="rgb"/>
+            </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="4">
+              <Table columnCount="11" rowCount="5">
                 <Column editable="true" title="id_proveedor" type="java.lang.Object"/>
                 <Column editable="true" title="Nombre" type="java.lang.Object"/>
                 <Column editable="true" title="RFC" type="java.lang.Object"/>
                 <Column editable="true" title="Calle" type="java.lang.Object"/>
                 <Column editable="true" title="No" type="java.lang.Object"/>
                 <Column editable="true" title="Colonia" type="java.lang.Object"/>
-                <Column editable="true" title="..." type="java.lang.Object"/>
+                <Column editable="true" title="Cuidad" type="java.lang.Object"/>
+                <Column editable="true" title="Estado" type="java.lang.Object"/>
+                <Column editable="true" title="Nombre Contacto" type="java.lang.Object"/>
+                <Column editable="true" title="Telefono" type="java.lang.Object"/>
+                <Column editable="true" title="Email" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -656,5 +711,19 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/proveed.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jB_guardar">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/imagenes/1477462880_Save.png"/>
+        </Property>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
