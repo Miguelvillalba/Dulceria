@@ -4,11 +4,6 @@
  * and open the template in the editor.
  */
 package mains;
-
-/**
- *
- * @author Andro
- */
 import views.*;
 import models.*;
 import controls.*;

@@ -17,7 +17,7 @@ import sax.DBConnection;
 public class ControllerCliente implements ActionListener{
     private final ModelCliente modelCliente;
     private final ViewCliente viewCliente;
-    private DBConnection conection = new DBConnection(3306,"localhost", "dulceria", "root", "1234");
+    private final DBConnection conection = new DBConnection(3306,"localhost", "dulceria", "root", "1234");
 
     public ControllerCliente(ViewCliente viewCliente, ModelCliente modelCliente){
         this.modelCliente=modelCliente;
@@ -95,37 +95,41 @@ public class ControllerCliente implements ActionListener{
         this.viewCliente.jtfNombre.setText("");
         this.viewCliente.jtfDireccion.setText("");
          this.viewCliente.jtfTelefono.setText("");
-        this.viewCliente.jtfCiudad.setText("");
+        this.viewCliente.jtfFecha_nacimiento.setText("");
           
     }
      public void guadarRegistro() {        
        
              String nombre=this.viewCliente.jtfNombre.getText();
+              String apellido=this.viewCliente.jtfApellido.getText();
              Integer telefono=Integer.parseInt(viewCliente.jtfTelefono.getText());
              String Direccion=this.viewCliente.jtfDireccion.getText();
-             String ciudad=this.viewCliente.jtfCiudad.getText();
+             String fecha_nacimiento=this.viewCliente.jtfFecha_nacimiento.getText();
+             String email=this.viewCliente.jtfEmail.getText();
+             
             
 
-            conection.executeUpdate("insert into clientes (nombre,Direccion,telefono,ciudad)"+" values "
-                    + "('"+ nombre +"','"+Direccion+"','"+telefono+"','"+ciudad+"');"); 
+            conection.executeUpdate("insert into clientes (nombre,apellido,direccion,fecha_nacimiento,telefono,email)"+" values "
+                    + "('"+ nombre +"','"+apellido+"','"+Direccion+"','"+fecha_nacimiento+"','"+telefono+"','"+email+"');"); 
             
            this.modelCliente.setValues();
            //showValues();
        
 
     }
-     /*private void showData() {
+     private void showData() {
         viewCliente.jTable.setModel(modelCliente.tableModel);
         modelCliente.Tabla();
-    }*/
+    }
      public void editarValues(){
-         Integer id_cliente=Integer.parseInt(viewCliente.jtfid.getText());
          String nombre=this.viewCliente.jtfNombre.getText();
+              String apellido=this.viewCliente.jtfApellido.getText();
              Integer telefono=Integer.parseInt(viewCliente.jtfTelefono.getText());
-             String ciudad=this.viewCliente.jtfCiudad.getText();
-             String direccion=this.viewCliente.jtfDireccion.getText();
+             String Direccion=this.viewCliente.jtfDireccion.getText();
+             String fecha_nacimiento=this.viewCliente.jtfFecha_nacimiento.getText();
+             String email=this.viewCliente.jtfEmail.getText();
              
-             conection.executeUpdate ( "update clientes set nombre='"+nombre+"',telefono='"+telefono+"',Ciudad='"+ciudad+"',Direccion='"+direccion+"' where id='"+this.viewCliente.jtfid.getText()+"';");
+             conection.executeUpdate ( "update clientes set nombre='"+nombre+"',apellido='"+apellido+"' ,telefono='"+telefono+"',fecha_nacimiento='"+fecha_nacimiento+"',Email='"+email+"',Direccion='"+Direccion+"' where id='"+this.viewCliente.jtfid.getText()+"';");
        
        this.modelCliente.setValues();
 
@@ -136,16 +140,15 @@ public class ControllerCliente implements ActionListener{
     private void showValues(){
         viewCliente.jtfid.setText(""+modelCliente.getId());
         viewCliente.jtfNombre.setText(modelCliente.getNombre());
+        viewCliente.jtfApellido.setText(modelCliente.getApellido());
         viewCliente.jtfDireccion.setText(modelCliente.getDireccion());
         viewCliente.jtfTelefono.setText(""+modelCliente.getTelefono());
-        viewCliente.jtfCiudad.setText(""+modelCliente.getCiudad());
+        viewCliente.jtfFecha_nacimiento.setText(""+modelCliente.getFecha_nacimiento());
+        viewCliente.jtfEmail.setText(""+modelCliente.getEmail());
         
     }
 
-    private void showData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+  
 
    
 }

@@ -4,24 +4,33 @@
  * and open the template in the editor.
  */
 package models;
+import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 import sax.DBConnection;
+import views.ViewCliente;
 /**
  *
  * @author Andro
  */
 public class ModelCliente {
+    private DBConnection conection = new DBConnection(3306, "localhost", "dulceria", "root", "");
+   
+    
+    
    private Integer id=0; 
-   private String nombre= "";  
+   private String nombre= "";
+   private String apellido= "";
    private String Direccion= "";
    private String telefono = "";
    private String ciudad= "";
+   private String fecha_nacimiento= "";
+   private String email= "";
+ViewCliente viewClientes = new ViewCliente();
     /**
      * @return the nombre
      */
    
-   private DBConnection conection = new DBConnection(3306, "localhost", "dulceria", "root", "");
-    
+   public DefaultTableModel tableModel = new DefaultTableModel(new String [] {"id_cliente","nombre","apellido","Direccion","fecha_naciemiento","Telefono","email"}, 0);
      public void moveNext(){
         conection.moveNext();
         setValues();
@@ -54,6 +63,13 @@ public class ModelCliente {
         this.setDireccion(conection.getString("Direccion"));
         this.setCiudad(conection.getString("ciudad"));
                 
+    }
+    
+    public void Tabla(){
+        while (conection.moveNext()){
+            SetValues();
+                tableModel.addRow(new Object []{id,nombre,telefono,Direccion,ciudad});
+        }
     }
     public String getNombre() {
         return nombre;
@@ -120,5 +136,51 @@ public class ModelCliente {
      */
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    private void SetValues() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @return the apellido
+     */
+    public String getApellido() {
+        return apellido;
+    }
+
+    /**
+     * @param apellido the apellido to set
+     */
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    /**
+     * @return the fecha_nacimiento
+     */
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
+    }
+
+    /**
+     * @param fecha_nacimiento the fecha_nacimiento to set
+     */
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
