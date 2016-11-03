@@ -260,7 +260,7 @@ public class ViewProveedor extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jT_tabla);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/proveed.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/proveedores.png"))); // NOI18N
 
         jB_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1477462880_Save.png"))); // NOI18N
 
