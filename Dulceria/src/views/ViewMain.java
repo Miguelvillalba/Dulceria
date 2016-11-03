@@ -27,26 +27,130 @@ public class ViewMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jL_imagen1 = new javax.swing.JLabel();
+        jL_imagen2 = new javax.swing.JLabel();
+        jL_usuario = new javax.swing.JLabel();
+        jL_pasword = new javax.swing.JLabel();
+        jft_usuario = new javax.swing.JTextField();
+        jtf_password = new javax.swing.JTextField();
+        jL_inicio = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jM_archivo = new javax.swing.JMenu();
+        jmi_usuarios = new javax.swing.JMenuItem();
+        jM_catalogos = new javax.swing.JMenu();
         jmi_clientes = new javax.swing.JMenuItem();
         jmi_proveedores = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
+        jM_operaciones = new javax.swing.JMenu();
+        jmi_compras = new javax.swing.JMenuItem();
+        jmi_ventas = new javax.swing.JMenuItem();
+        jM_reportes = new javax.swing.JMenu();
+        jmi_clientess = new javax.swing.JMenuItem();
+        jmi_productoss = new javax.swing.JMenuItem();
+        jmi_proveedoress = new javax.swing.JMenuItem();
+        jmi_comprass = new javax.swing.JMenuItem();
+        jmi_ventass = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Menu");
+        jL_imagen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dulce.png"))); // NOI18N
 
+        jL_imagen2.setFont(new java.awt.Font("Tahoma", 0, 23)); // NOI18N
+        jL_imagen2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_imagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/candy.png"))); // NOI18N
+        jL_imagen2.setLabelFor(jL_imagen2);
+        jL_imagen2.setText("D U L C E R I A");
+        jL_imagen2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jL_usuario.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jL_usuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_usuario.setText("Usuario");
+
+        jL_pasword.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jL_pasword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_pasword.setText("Contraseña");
+
+        jft_usuario.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+
+        jtf_password.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+
+        jL_inicio.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jL_inicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_inicio.setText("Inicio \nSesión");
+
+        jM_archivo.setText("Archivo");
+        jM_archivo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        jmi_usuarios.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jmi_usuarios.setText("Usuarios");
+        jM_archivo.add(jmi_usuarios);
+
+        jMenuBar1.add(jM_archivo);
+
+        jM_catalogos.setText("Catalogos");
+        jM_catalogos.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+
+        jmi_clientes.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jmi_clientes.setText("Clientes");
-        jMenu1.add(jmi_clientes);
+        jM_catalogos.add(jmi_clientes);
 
+        jmi_proveedores.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jmi_proveedores.setText("Proveedores");
-        jMenu1.add(jmi_proveedores);
+        jM_catalogos.add(jmi_proveedores);
 
+        jmi_productos.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jmi_productos.setText("Productos");
-        jMenu1.add(jmi_productos);
+        jM_catalogos.add(jmi_productos);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jM_catalogos);
+
+        jM_operaciones.setText("Operaciones");
+        jM_operaciones.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+
+        jmi_compras.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jmi_compras.setText("Compras");
+        jM_operaciones.add(jmi_compras);
+
+        jmi_ventas.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jmi_ventas.setText("Ventas");
+        jM_operaciones.add(jmi_ventas);
+
+        jMenuBar1.add(jM_operaciones);
+
+        jM_reportes.setText("Reportes");
+        jM_reportes.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+
+        jmi_clientess.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jmi_clientess.setText("Clientes");
+        jmi_clientess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_clientessActionPerformed(evt);
+            }
+        });
+        jM_reportes.add(jmi_clientess);
+
+        jmi_productoss.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jmi_productoss.setText("Productos");
+        jmi_productoss.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_productossActionPerformed(evt);
+            }
+        });
+        jM_reportes.add(jmi_productoss);
+
+        jmi_proveedoress.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jmi_proveedoress.setText("Proveedores");
+        jM_reportes.add(jmi_proveedoress);
+
+        jmi_comprass.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jmi_comprass.setText("Compras");
+        jM_reportes.add(jmi_comprass);
+
+        jmi_ventass.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jmi_ventass.setText("Ventas");
+        jM_reportes.add(jmi_ventass);
+
+        jMenuBar1.add(jM_reportes);
 
         setJMenuBar(jMenuBar1);
 
@@ -54,15 +158,54 @@ public class ViewMain extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jL_inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jL_pasword)
+                            .addComponent(jL_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(13, 13, 13)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jft_usuario)
+                            .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jL_imagen1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jL_imagen2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jL_inicio)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jL_usuario)
+                    .addComponent(jft_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jL_pasword)
+                    .addComponent(jtf_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jL_imagen1)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jL_imagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmi_clientessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_clientessActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_clientessActionPerformed
+
+    private void jmi_productossActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_productossActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_productossActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,10 +243,28 @@ public class ViewMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JMenu jMenu1;
+    private javax.swing.JLabel jL_imagen1;
+    private javax.swing.JLabel jL_imagen2;
+    private javax.swing.JLabel jL_inicio;
+    public javax.swing.JLabel jL_pasword;
+    public javax.swing.JLabel jL_usuario;
+    public javax.swing.JMenu jM_archivo;
+    public javax.swing.JMenu jM_catalogos;
+    public javax.swing.JMenu jM_operaciones;
+    public javax.swing.JMenu jM_reportes;
     public javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JTextField jft_usuario;
     public javax.swing.JMenuItem jmi_clientes;
+    public javax.swing.JMenuItem jmi_clientess;
+    public javax.swing.JMenuItem jmi_compras;
+    public javax.swing.JMenuItem jmi_comprass;
     public javax.swing.JMenuItem jmi_productos;
+    public javax.swing.JMenuItem jmi_productoss;
     public javax.swing.JMenuItem jmi_proveedores;
+    public javax.swing.JMenuItem jmi_proveedoress;
+    public javax.swing.JMenuItem jmi_usuarios;
+    public javax.swing.JMenuItem jmi_ventas;
+    public javax.swing.JMenuItem jmi_ventass;
+    public javax.swing.JTextField jtf_password;
     // End of variables declaration//GEN-END:variables
 }
