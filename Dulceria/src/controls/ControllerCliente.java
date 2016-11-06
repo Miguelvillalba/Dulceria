@@ -17,7 +17,7 @@ import sax.DBConnection;
 public class ControllerCliente implements ActionListener{
     private final ModelCliente modelCliente;
     private final ViewCliente viewCliente;
-    private final DBConnection conection = new DBConnection(3306,"localhost", "dulceria", "root", "1234");
+    private final DBConnection conection = new DBConnection(3306,"localhost", "dulceria","root", "1234");
 
     public ControllerCliente(ViewCliente viewCliente, ModelCliente modelCliente){
         this.modelCliente=modelCliente;
@@ -34,7 +34,7 @@ public class ControllerCliente implements ActionListener{
         this.viewCliente.jbguardar.addActionListener(this);
         
         initView();
-        showData();
+//        showData();
     }
         private void initView(){
         modelCliente.initValues();
@@ -92,28 +92,32 @@ public class ControllerCliente implements ActionListener{
     }
     
      public void agregarRegistro(){
+        this.viewCliente.jtfid.setText("");
         this.viewCliente.jtfNombre.setText("");
+        this.viewCliente.jtfApellido.setText("");
         this.viewCliente.jtfDireccion.setText("");
-         this.viewCliente.jtfTelefono.setText("");
-        this.viewCliente.jtfFecha_nacimiento.setText("");
-          
+        this.viewCliente.jtfTelefono.setText("");
+        this.viewCliente.jtfFecha_nac.setText("");
+        this.viewCliente.jtfEmail.setText("");
     }
      public void guadarRegistro() {        
-       
+             String id_cliente=this.viewCliente.jtfid.getText();
              String nombre=this.viewCliente.jtfNombre.getText();
-              String apellido=this.viewCliente.jtfApellido.getText();
-             Integer telefono=Integer.parseInt(viewCliente.jtfTelefono.getText());
-             String Direccion=this.viewCliente.jtfDireccion.getText();
-             String fecha_nacimiento=this.viewCliente.jtfFecha_nacimiento.getText();
+             String apellido=this.viewCliente.jtfApellido.getText();
+             String fecha_nac=this.viewCliente.jtfFecha_nac.getText();
+             String direccion=this.viewCliente.jtfDireccion.getText();
+             String telefono=this.viewCliente.jtfTelefono.getText();
              String email=this.viewCliente.jtfEmail.getText();
+             
+             
              
             
 
-            conection.executeUpdate("insert into clientes (nombre,apellido,direccion,fecha_nacimiento,telefono,email)"+" values "
-                    + "('"+ nombre +"','"+apellido+"','"+Direccion+"','"+fecha_nacimiento+"','"+telefono+"','"+email+"');"); 
+            conection.executeUpdate("insert into clientes (id_cliente,nombre,apellido,direccion,fecha_nac,telefono,email)"+" values "
+                    + "('"+ id_cliente +"','"+ nombre +"','"+apellido+"','"+fecha_nac+"','"+direccion+"','"+telefono+"','"+email+"');"); 
             
            this.modelCliente.setValues();
-           //showValues();
+           showValues();
        
 
     }
@@ -122,14 +126,14 @@ public class ControllerCliente implements ActionListener{
         modelCliente.Tabla();
     }
      public void editarValues(){
-         String nombre=this.viewCliente.jtfNombre.getText();
-              String apellido=this.viewCliente.jtfApellido.getText();
-             Integer telefono=Integer.parseInt(viewCliente.jtfTelefono.getText());
-             String Direccion=this.viewCliente.jtfDireccion.getText();
-             String fecha_nacimiento=this.viewCliente.jtfFecha_nacimiento.getText();
+             String nombre=this.viewCliente.jtfNombre.getText();
+             String apellido=this.viewCliente.jtfApellido.getText();
+             String telefono=this.viewCliente.jtfTelefono.getText();
+             String direccion=this.viewCliente.jtfDireccion.getText();
+             String fecha_nac=this.viewCliente.jtfFecha_nac.getText();
              String email=this.viewCliente.jtfEmail.getText();
              
-             conection.executeUpdate ( "update clientes set nombre='"+nombre+"',apellido='"+apellido+"' ,telefono='"+telefono+"',fecha_nacimiento='"+fecha_nacimiento+"',Email='"+email+"',Direccion='"+Direccion+"' where id='"+this.viewCliente.jtfid.getText()+"';");
+             conection.executeUpdate ( "update clientes set nombre='"+nombre+"',apellido='"+apellido+"' ,telefono='"+telefono+"',fecha_nac='"+fecha_nac+"',Email='"+email+"',Direccion='"+direccion+"' where id='"+this.viewCliente.jtfid.getText()+"';");
        
        this.modelCliente.setValues();
 
@@ -138,13 +142,13 @@ public class ControllerCliente implements ActionListener{
      
     
     private void showValues(){
-        viewCliente.jtfid.setText(""+modelCliente.getId());
-        viewCliente.jtfNombre.setText(modelCliente.getNombre());
-        viewCliente.jtfApellido.setText(modelCliente.getApellido());
-        viewCliente.jtfDireccion.setText(modelCliente.getDireccion());
-        viewCliente.jtfTelefono.setText(""+modelCliente.getTelefono());
-        viewCliente.jtfFecha_nacimiento.setText(""+modelCliente.getFecha_nacimiento());
-        viewCliente.jtfEmail.setText(""+modelCliente.getEmail());
+        this.viewCliente.jtfid.setText(""+modelCliente.getId());
+        this.viewCliente.jtfNombre.setText(modelCliente.getNombre());
+        this.viewCliente.jtfApellido.setText(modelCliente.getApellido());
+        this.viewCliente.jtfDireccion.setText(modelCliente.getDireccion());
+        this.viewCliente.jtfTelefono.setText(""+modelCliente.getTelefono());
+        this.viewCliente.jtfFecha_nac.setText(""+modelCliente.getFecha_nacimiento());
+        this.viewCliente.jtfEmail.setText(""+modelCliente.getEmail());
         
     }
 
