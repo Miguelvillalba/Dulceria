@@ -7,30 +7,39 @@ package models;
 import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 import sax.DBConnection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import views.ViewCliente;
 /**
  *
  * @author Andro
  */
 public class ModelCliente {
-    private DBConnection conection = new DBConnection(3306, "localhost", "dulceria", "root", "");
+    private String maquina = "locahost";
+    private String usuario = "root";
+    private String clave = "1234";
+    private int puerto = 3306;
+    private String servidor="";
+    private static Connection conexion = null;
+    private DBConnection conection = new DBConnection(3306,"localhost", "dulceria", "root", "1234");
    
     
     
-   private Integer id=0; 
+   private String id_cliente=""; 
    private String nombre= "";
    private String apellido= "";
-   private String Direccion= "";
+   private String fecha_nac= "";
+   private String direccion= "";
    private String telefono = "";
-   private String ciudad= "";
-   private String fecha_nacimiento= "";
    private String email= "";
+   
 ViewCliente viewClientes = new ViewCliente();
     /**
      * @return the nombre
      */
    
-   public DefaultTableModel tableModel = new DefaultTableModel(new String [] {"id_cliente","nombre","apellido","Direccion","fecha_naciemiento","Telefono","email"}, 0);
+   public DefaultTableModel tableModel = new DefaultTableModel(new String [] {"id_cliente","nombre","apellido","fecha_nac","direccion","telefono","email"}, 0);
      public void moveNext(){
         conection.moveNext();
         setValues();
@@ -52,27 +61,48 @@ ViewCliente viewClientes = new ViewCliente();
     }
     
     public void initValues(){
-        conection.executeQuery("SELECT id_producto, nombre, precio, stock, descripcion FROM producto;");
+        conection.executeQuery("SELECT id_cliente, nombre, apellido, fecha_nac,direccion,telefono,email FROM clientes;");
         conection.moveNext();
         setValues();
     }
     public void setValues(){
-        this.setId(conection.getInteger("id"));
-        this.setNombre(conection.getString("nombre"));
-        this.setTelefono(conection.getString("Telefono"));
-        this.setDireccion(conection.getString("Direccion"));
-        this.setCiudad(conection.getString("ciudad"));
+        this.id_cliente=conection.getString("id_cliente");
+        this.nombre=conection.getString("nombre");
+        this.apellido=conection.getString("apellido");
+        this.fecha_nac=conection.getString("fecha_nac");
+        this.direccion=conection.getString("direccion");
+        this.telefono=conection.getString("telefono");
+        this.email=conection.getString("email");
                 
     }
     
     public void Tabla(){
         while (conection.moveNext()){
-            SetValues();
-                tableModel.addRow(new Object []{id,nombre,telefono,Direccion,ciudad});
+            setValues();
+                tableModel.addRow(new Object []{id_cliente, nombre, apellido, fecha_nac,direccion,telefono,email});
         }
+    }
+    public void eliminarValues()
+    {
+        conection.executeUpdate ("delete from clientes where id_cliente="+id_cliente);
+
+           this.viewClientes.jtfNombre.setText("");
+             this.viewClientes.jtfApellido.setText(""); 
+             this.viewClientes.jtfFecha_nac.getText();
+             this.viewClientes.jtfDireccion.setText("");
+             this.viewClientes.jtfTelefono.setText("");
+             this.viewClientes.jtfEmail.setText("");
+          
+             initValues();
     }
     public String getNombre() {
         return nombre;
+    }
+    public String getTelefono() {
+        return telefono;
+    }
+    public String getId_cliente() {
+        return id_cliente;
     }
 
     /**
@@ -85,66 +115,26 @@ ViewCliente viewClientes = new ViewCliente();
     /**
      * @return the telefono
      */
-    public String getTelefono() {
-        return telefono;
-    }
+    
 
     /**
      * @param telefono the telefono to set
      */
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
+    
 
     /**
      * @return the Direccion
      */
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 
     /**
      * @param Direccion the Direccion to set
      */
     public void setDireccion(String Direccion) {
-        this.Direccion = Direccion;
+        this.direccion = Direccion;
     }
-
-    /**
-     * @return the ciudad
-     */
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    /**
-     * @param ciudad the ciudad to set
-     */
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    /**
-     * @return the id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    private void SetValues() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
-     * @return the apellido
-     */
     public String getApellido() {
         return apellido;
     }
@@ -159,15 +149,15 @@ ViewCliente viewClientes = new ViewCliente();
     /**
      * @return the fecha_nacimiento
      */
-    public String getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public String getFecha_nac() {
+        return fecha_nac;
     }
 
     /**
      * @param fecha_nacimiento the fecha_nacimiento to set
      */
-    public void setFecha_nacimiento(String fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFecha_nac(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
 
     /**
@@ -183,4 +173,19 @@ ViewCliente viewClientes = new ViewCliente();
     public void setEmail(String email) {
         this.email = email;
     }
+
+    
+    public void setId_cliente(String id_cliente) {
+        this.id_cliente = id_cliente;
+    }
+
+    /**
+     * @param telefono the telefono to set
+     */
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+  
+    
+   
 }
