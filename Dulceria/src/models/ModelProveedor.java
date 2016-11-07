@@ -1,5 +1,11 @@
 package models;
 import sax.DBConnection;
+import sax.DBConnection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+import views.ViewProveedor;
 /**
  *
  * @author Karla
@@ -17,10 +23,19 @@ public class ModelProveedor {
     private int telefono;
     private String email;
 
-
-    private DBConnection conection = new DBConnection(3306, "localhost", "dulceria", "root", "");
+    private String maquina = "locahost";
+    private String usuario = "root";
+    private String clave = "1234";
+    private int puerto = 3306;
+    private String servidor="";
+    private static Connection conexion = null;
+    private DBConnection conection = new DBConnection(3306,"localhost", "dulceria", "root", "1234");
     
-     public void moveNext(){
+    ViewProveedor viewProveedor = new ViewProveedor();
+    
+    public DefaultTableModel tableModel = new DefaultTableModel(new String [] {"id_cliente","nombre","apellido","fecha_nac","direccion","telefono","email"}, 0);
+     
+    public void moveNext(){
         conection.moveNext();
         setValues();
     }
@@ -45,6 +60,7 @@ public class ModelProveedor {
         conection.moveNext();
         setValues();
     }
+    
     public void setValues(){
         this.setId_proveedor(conection.getInteger("id_proveedor"));
         this.setNombre(conection.getString("nombre"));
@@ -56,6 +72,28 @@ public class ModelProveedor {
         this.setNombre_contacto(conection.getString("Nombre_contacto"));
         this.setTelefono(conection.getInteger("Telefono"));
         this.setEmail(conection.getString("Email"));       
+    }
+    public void eliminarValues()
+    {
+        conection.executeUpdate ("delete from clientes where id_proveedor="+id_proveedor);
+
+            this.viewProveedor.jtf_nombre.setText(""); 
+            this.viewProveedor.jtf_rfc.getText();
+            this.viewProveedor.jtf_calle.setText("");
+            this.viewProveedor.jtf_no.setText("");
+            this.viewProveedor.jtf_colonia.setText("");
+            this.viewProveedor.jtf_ciudad.setText("");
+            this.viewProveedor.jtf_estado.getText();
+            this.viewProveedor.jtf_nombre_contacto.setText("");
+            this.viewProveedor.jtf_telefono.setText("");
+            this.viewProveedor.jtf_email.setText("");
+            initValues();
+    }
+    public void Tabla(){
+        while (conection.moveNext()){
+            setValues();
+                tableModel.addRow(new Object []{id_proveedor, nombre, rfc, calle,no,colonia,estado, ciudad, nombrecontacto, telefono, email});
+        }
     }
     
     public int getId_proveedor() {

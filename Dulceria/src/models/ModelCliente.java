@@ -88,7 +88,7 @@ ViewCliente viewClientes = new ViewCliente();
 
            this.viewClientes.jtfNombre.setText("");
              this.viewClientes.jtfApellido.setText(""); 
-             this.viewClientes.jtfFecha_nac.getText();
+             this.viewClientes.jtfFecha_nacimiento.getText();
              this.viewClientes.jtfDireccion.setText("");
              this.viewClientes.jtfTelefono.setText("");
              this.viewClientes.jtfEmail.setText("");

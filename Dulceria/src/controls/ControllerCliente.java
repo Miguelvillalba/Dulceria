@@ -97,14 +97,14 @@ public class ControllerCliente implements ActionListener{
         this.viewCliente.jtfApellido.setText("");
         this.viewCliente.jtfDireccion.setText("");
         this.viewCliente.jtfTelefono.setText("");
-        this.viewCliente.jtfFecha_nac.setText("");
+        this.viewCliente.jtfFecha_nacimiento.setText("");
         this.viewCliente.jtfEmail.setText("");
     }
      public void guadarRegistro() {        
              String id_cliente=this.viewCliente.jtfid.getText();
              String nombre=this.viewCliente.jtfNombre.getText();
              String apellido=this.viewCliente.jtfApellido.getText();
-             String fecha_nac=this.viewCliente.jtfFecha_nac.getText();
+             String fecha_nac=this.viewCliente.jtfFecha_nacimiento.getText();
              String direccion=this.viewCliente.jtfDireccion.getText();
              String telefono=this.viewCliente.jtfTelefono.getText();
              String email=this.viewCliente.jtfEmail.getText();
@@ -130,7 +130,7 @@ public class ControllerCliente implements ActionListener{
              String apellido=this.viewCliente.jtfApellido.getText();
              String telefono=this.viewCliente.jtfTelefono.getText();
              String direccion=this.viewCliente.jtfDireccion.getText();
-             String fecha_nac=this.viewCliente.jtfFecha_nac.getText();
+             String fecha_nac=this.viewCliente.jtfFecha_nacimiento.getText();
              String email=this.viewCliente.jtfEmail.getText();
              
              conection.executeUpdate ( "update clientes set nombre='"+nombre+"',apellido='"+apellido+"' ,telefono='"+telefono+"',fecha_nac='"+fecha_nac+"',Email='"+email+"',Direccion='"+direccion+"' where id='"+this.viewCliente.jtfid.getText()+"';");
@@ -142,12 +142,12 @@ public class ControllerCliente implements ActionListener{
      
     
     private void showValues(){
-        this.viewCliente.jtfid.setText(""+modelCliente.getId());
+        this.viewCliente.jtfid.setText(""+modelCliente.getId_cliente());
         this.viewCliente.jtfNombre.setText(modelCliente.getNombre());
         this.viewCliente.jtfApellido.setText(modelCliente.getApellido());
         this.viewCliente.jtfDireccion.setText(modelCliente.getDireccion());
         this.viewCliente.jtfTelefono.setText(""+modelCliente.getTelefono());
-        this.viewCliente.jtfFecha_nac.setText(""+modelCliente.getFecha_nacimiento());
+        this.viewCliente.jtfFecha_nacimiento.setText(""+modelCliente.getFecha_nac());
         this.viewCliente.jtfEmail.setText(""+modelCliente.getEmail());
         
     }

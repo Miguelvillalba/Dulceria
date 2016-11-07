@@ -8,19 +8,17 @@ import models.ModelProveedor;
 import views.ViewProveedor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
+import sax.DBConnection;
 /**
  *
  * @author Karla
  */
 public class ControllerProveedor implements ActionListener {
-    
-    private ModelProveedor modelproveedor;
-    private ViewProveedor viewproveedor;
-    private Statement st;
-    private ResultSet rs;
+    private final ModelProveedor modelproveedor;
+    private final ViewProveedor viewproveedor;
+    private final DBConnection conection = new DBConnection(3306,"localhost", "dulceria","root", "1234");
     
 public ControllerProveedor(ViewProveedor viewProveedor, ModelProveedor modelProveedor){
     this.viewproveedor = viewProveedor;
@@ -30,6 +28,11 @@ public ControllerProveedor(ViewProveedor viewProveedor, ModelProveedor modelProv
     this.viewproveedor.jB_anterior.addActionListener(this);
     this.viewproveedor.jB_siguiente.addActionListener(this);
     this.viewproveedor.jB_ultimo.addActionListener(this);
+    this.viewproveedor.jB_agregar.addActionListener(this);
+    this.viewproveedor.jB_buscar.addActionListener(this);
+    this.viewproveedor.jB_editar.addActionListener(this);
+    this.viewproveedor.jB_quitar.addActionListener(this);
+    this.viewproveedor.jB_guardar.addActionListener(this);
     
     initview();
 }
@@ -44,7 +47,96 @@ public void actionPerformed(ActionEvent e) {
         jB_siguienteActionPerformed();
     } else if(e.getSource() == viewproveedor.jB_ultimo){
         jB_ultimoActionPerformed();
+    } else if(e.getSource()== viewproveedor.jB_agregar){
+        jB_agregar();
+    } else if(e.getSource() == viewproveedor.jB_buscar){
+        jB_buscar();
+    } else if(e.getSource() == viewproveedor.jB_editar){
+        jB_editar();
+    } else if(e.getSource() == viewproveedor.jB_guardar){
+        jB_guardar();
+    } else if(e.getSource() == viewproveedor.jB_quitar){
+        jB_quitar();
     }
+}
+
+public void jB_agregar(){
+    this.viewproveedor.jtf_id.setText("");
+    this.viewproveedor.jtf_nombre.setText("");
+    this.viewproveedor.jtf_rfc.setText("");
+    this.viewproveedor.jtf_calle.setText("");
+    this.viewproveedor.jtf_no.setText("");
+    this.viewproveedor.jtf_colonia.setText("");
+    this.viewproveedor.jtf_ciudad.setText("");
+    this.viewproveedor.jtf_estado.setText("");
+    this.viewproveedor.jtf_nombre_contacto.setText("");
+    this.viewproveedor.jtf_telefono.setText("");
+    this.viewproveedor.jtf_email.setText(""); 
+}
+
+public void jB_editar(){
+    this.viewproveedor.jtf_nombre.setText("");
+    this.viewproveedor.jtf_rfc.setText("");
+    this.viewproveedor.jtf_calle.setText("");
+    this.viewproveedor.jtf_no.setText("");
+    this.viewproveedor.jtf_colonia.setText("");
+    this.viewproveedor.jtf_ciudad.setText("");
+    this.viewproveedor.jtf_estado.setText("");
+    this.viewproveedor.jtf_nombre_contacto.setText("");
+    this.viewproveedor.jtf_telefono.setText("");
+    this.viewproveedor.jtf_email.setText(""); 
+    
+    
+       
+       this.modelproveedor.setValues();
+
+}
+
+public void jB_guardar(){
+    this.viewproveedor.jtf_id.setText("");
+    this.viewproveedor.jtf_nombre.setText("");
+    this.viewproveedor.jtf_rfc.setText("");
+    this.viewproveedor.jtf_calle.setText("");
+    this.viewproveedor.jtf_no.setText("");
+    this.viewproveedor.jtf_colonia.setText("");
+    this.viewproveedor.jtf_ciudad.setText("");
+    this.viewproveedor.jtf_estado.setText("");
+    this.viewproveedor.jtf_nombre_contacto.setText("");
+    this.viewproveedor.jtf_telefono.setText("");
+    this.viewproveedor.jtf_email.setText(""); 
+    
+    
+            
+    this.modelproveedor.setValues();
+    showValues();
+}
+
+public void jB_buscar(){
+    this.viewproveedor.jtf_id.setText("");
+    this.viewproveedor.jtf_nombre.setText("");
+    this.viewproveedor.jtf_rfc.setText("");
+    this.viewproveedor.jtf_calle.setText("");
+    this.viewproveedor.jtf_no.setText("");
+    this.viewproveedor.jtf_colonia.setText("");
+    this.viewproveedor.jtf_ciudad.setText("");
+    this.viewproveedor.jtf_estado.setText("");
+    this.viewproveedor.jtf_nombre_contacto.setText("");
+    this.viewproveedor.jtf_telefono.setText("");
+    this.viewproveedor.jtf_email.setText(""); 
+}
+
+public void jB_quitar(){
+    this.viewproveedor.jtf_id.setText("");
+    this.viewproveedor.jtf_nombre.setText("");
+    this.viewproveedor.jtf_rfc.setText("");
+    this.viewproveedor.jtf_calle.setText("");
+    this.viewproveedor.jtf_no.setText("");
+    this.viewproveedor.jtf_colonia.setText("");
+    this.viewproveedor.jtf_ciudad.setText("");
+    this.viewproveedor.jtf_estado.setText("");
+    this.viewproveedor.jtf_nombre_contacto.setText("");
+    this.viewproveedor.jtf_telefono.setText("");
+    this.viewproveedor.jtf_email.setText(""); 
 }
 
 private void jB_primeroActionPerformed(){
@@ -81,43 +173,13 @@ private void showValues(){
     viewproveedor.jtf_email.setText(modelproveedor.getEmail());
 }
  private void initview() {
-    modelproveedor.initValues();
- this.viewproveedor.setVisible(true);
+ modelproveedor.initValues();
+ showValues();
  }
  
-    
- private void jB_agregarMouseClicked(java.awt.event.MouseEvent evt) {
-    String id;
-    String nombre;
-    String rfc;
-    String calle;
-    int no;
-    String colonia;
-    String ciudad;
-    String estado;
-    String nombre_contacto;
-    int telefono;
-    String email;
-
-    try {
-    id = this.viewproveedor.jtf_id.getText();
-    nombre = this.viewproveedor.jtf_nombre.getText();
-    rfc = this.viewproveedor.jtf_rfc.getText();
-    calle = this.viewproveedor.jtf_calle.getText();
-    //no = this.viewproveedor.jtf_no.getText();
-    colonia = this.viewproveedor.jtf_colonia.getText();
-    ciudad = this.viewproveedor.jtf_ciudad.getText();
-    estado = this.viewproveedor.jtf_estado.getText();
-    nombre_contacto = this.viewproveedor.jtf_nombre_contacto.getText();
-    //telefono = this.viewproveedor.jtf_telefono.getText();
-    email = this.viewproveedor.jtf_email.getText();
-
-    //String sql = "insert into proveedor(id,nombre,rfc,calle,no,colonia,ciudad,estado,nombre_contacto,telefono,email) values ('" + id_proveedor + "','" + nombre + "','" + rfc + "','" + calle + "','" + no + "','" + colonia + '",'" + ciudad + "','" + estado + "','" + nombre_contacto + "','" + telefono + "','" + email + "');";
-  //  System.out.println(sql);
-    //st.executeUpdate(sql);
-
-    } catch (Exception err) {
-    JOptionPane.showMessageDialog(null, "Llena los campos correctamente" + err.getLocalizedMessage());
+ private void showData() {
+        viewproveedor.jT_tabla.setModel(modelproveedor.tableModel);
+        modelproveedor.Tabla();
+    }   
+ 
     }
- }
-}

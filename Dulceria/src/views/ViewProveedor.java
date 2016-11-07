@@ -476,7 +476,7 @@ public class ViewProveedor extends javax.swing.JPanel {
     public javax.swing.JButton jB_anterior;
     public javax.swing.JButton jB_buscar;
     public javax.swing.JButton jB_editar;
-    private javax.swing.JButton jB_guardar;
+    public javax.swing.JButton jB_guardar;
     public javax.swing.JButton jB_primero;
     public javax.swing.JButton jB_quitar;
     public javax.swing.JButton jB_siguiente;

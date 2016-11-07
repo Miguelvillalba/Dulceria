@@ -24,6 +24,6 @@ public class Main {
         
         ViewMain viewMain = new ViewMain();
         ModelMain modelMain = new ModelMain();
-        ControllerMain controllerMain = new ControllerMain(viewMain, viewProducto, modelMain);
+        ControllerMain controllerMain = new ControllerMain(viewMain, viewProducto, viewCliente, viewProveedor,modelMain);
     }
 }
