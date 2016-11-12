@@ -1,0 +1,12 @@
+CREATE TABLE `cliente` (
+  `id_cliente` int(20) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(30) NOT NULL,
+  `apellido` varchar(40) NOT NULL,
+  `direccion` varchar(60) NOT NULL,
+  `fecha_nacimiento` date NOT NULL,
+  `telefono` bigint(11) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_cliente`),
+  KEY `id_cliente` (`id_cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
