@@ -10,8 +10,9 @@ import views.ViewProducto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import java.sql.Statement;
-import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
+
+import sax.DBConnection;
 
 /**
  *
@@ -21,24 +22,32 @@ public class controllerProducto implements ActionListener {
 
     private ModelProducto modelProducto;
     private ViewProducto viewProducto;
-    private Statement st;
-    private ResultSet rs;
+
+    private final DBConnection conection = new DBConnection(3306, "localhost", "dulceria", "root", "");
 
     public controllerProducto(ViewProducto viewProducto, ModelProducto modelProducto) {
         this.viewProducto = viewProducto;
         this.modelProducto = modelProducto;
 
         this.viewProducto.jbtnFirst.addActionListener(this);
-        this.viewProducto.jbtnPrevious.addActionListener(this);
-        this.viewProducto.jbtnNext.addActionListener(this);
         this.viewProducto.jbtnLast.addActionListener(this);
+        this.viewProducto.jbtnNext.addActionListener(this);
+        this.viewProducto.jbtnPrevious.addActionListener(this);
+        this.viewProducto.jbtn_agregar.addActionListener(this);
+        this.viewProducto.jbtn_editar.addActionListener(this);
+        this.viewProducto.jbtn_eliminar.addActionListener(this);
+        this.viewProducto.jB_buscar.addActionListener(this);
+        this.viewProducto.jB_guardar.addActionListener(this);
 
         initView();
+        
     }
 
     private void initView() {
-        modelProducto.initValues();        
+        modelProducto.initValues();
         this.viewProducto.setVisible(true);
+        showValues();
+        showData();
     }
 
     @Override
@@ -51,6 +60,14 @@ public class controllerProducto implements ActionListener {
             jbtnNextActionPerformed();
         } else if (e.getSource() == viewProducto.jbtnLast) {
             jbtnLastActionPerformed();
+        } else if (e.getSource() == viewProducto.jbtn_agregar) {
+            agregarRegistro();
+        } else if (e.getSource() == viewProducto.jB_guardar) {
+            guardarRegistro();
+        } else if (e.getSource() == viewProducto.jbtn_editar) {
+            editarValues();
+        } else if (e.getSource() == viewProducto.jbtn_eliminar) {
+            eliminarRegistro();
         }
     }
 
@@ -60,7 +77,7 @@ public class controllerProducto implements ActionListener {
     }
 
     private void jbtnPreviousActionPerformed() {
-        modelProducto.movePreviousActionPerformed();
+        modelProducto.movePrevious();
         showValues();
     }
 
@@ -75,34 +92,78 @@ public class controllerProducto implements ActionListener {
     }
 
     private void showValues() {
-        viewProducto.jtf_id_producto.setText("" + modelProducto.getId_producto());
+        viewProducto.jtf_id_producto.setText(modelProducto.getId_producto());
         viewProducto.jtf_nombre.setText(modelProducto.getNombre());
         viewProducto.jtf_precio.setText(modelProducto.getPrecio());
-        viewProducto.jtf_existencias.setText(modelProducto.getStock());
+        viewProducto.jtf_stock.setText(modelProducto.getStock());
         viewProducto.jtf_descripcion.setText(modelProducto.getDescripcion());
     }
 
-    private void guardarRegistro() {
-        String id_producto;
-        String nombre;
-        String precio;
-        String stock;
-        String descripcion;
+    public void eliminarRegistro() {
+        conection.executeUpdate("delete from productos where id_producto=" + this.viewProducto.jtf_id_producto.getText());
+        JOptionPane.showMessageDialog(null, "Registro Borrado");
 
-        try {
-            id_producto = this.viewProducto.jtf_id_producto.getText();
-            nombre = this.viewProducto.jtf_nombre.getText();
-            precio = this.viewProducto.jtf_precio.getText();
-            stock = this.viewProducto.jtf_existencias.getText();
-            descripcion = this.viewProducto.jtf_descripcion.getText();
+        limpiar();
+        initView();
 
-            String sql = "insert into producto(id_producto,nombre,precio,stock,descripcion) values ('" + id_producto + "','" + nombre + "','" + precio + "','" + stock + "','" + descripcion + "');";
-            System.out.println(sql);
-            st.executeUpdate(sql);
-            this.modelProducto.setValues();
+        
 
-        } catch (Exception err) {
-            JOptionPane.showMessageDialog(null, "Favor de llenar todos los campos" + err.getLocalizedMessage());
+    }
+
+    public void agregarRegistro() {
+        this.viewProducto.jtf_id_producto.setText("");
+        this.viewProducto.jtf_nombre.setText("");
+        this.viewProducto.jtf_precio.setText("");
+        this.viewProducto.jtf_descripcion.setText("");
+        this.viewProducto.jtf_stock.setText("");
+
+    }
+
+    public void guardarRegistro() {
+        String id_producto = this.viewProducto.jtf_id_producto.getText();
+        String nombre = this.viewProducto.jtf_nombre.getText();
+        String descripcion = this.viewProducto.jtf_descripcion.getText();
+        String precio = this.viewProducto.jtf_precio.getText();
+        String stock = this.viewProducto.jtf_stock.getText();
+
+        conection.executeUpdate("insert into productos (nombre,precio,descripcion,stock)" + " values "
+                + "('" + nombre + "','" + precio + "','" + descripcion + "','" + stock + "');");
+        JOptionPane.showMessageDialog(null, "Registro Insertado");
+        this.modelProducto.setValues();
+
+        limpiar();
+        initView();
+
+       
+
+    }
+
+    private void showData() {
+        viewProducto.jT_tabla.setModel(modelProducto.tableModel);
+        modelProducto.Tabla();
+    }
+
+    public void editarValues() {
+
+        String nombre = this.viewProducto.jtf_nombre.getText();
+        String precio = this.viewProducto.jtf_precio.getText();
+        String descripcion = this.viewProducto.jtf_descripcion.getText();
+        String stock = this.viewProducto.jtf_stock.getText();
+
+        conection.executeUpdate("update productos set nombre='" + nombre + "',precio='" + precio + "',descripcion= '" + descripcion + "',stock= '" + stock + "' where id_producto=" + this.viewProducto.jtf_id_producto.getText());
+        JOptionPane.showMessageDialog(null, "Registro Editado");
+        this.modelProducto.setValues();
+
+        limpiar();
+        initView();
+
+        
+
+    }
+
+    void limpiar() {
+        while (viewProducto.jT_tabla.getRowCount() != 0) {
+            ((DefaultTableModel) viewProducto.jT_tabla.getModel()).removeRow(0);
         }
     }
 
